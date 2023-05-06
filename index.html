@@ -6,17 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="app.js" defer></script>
-    <title>Document</title>
+    <title>Library App</title>
 </head>
 <body>
+    <button data-modal-target="#modal">Add a new book</button>
     <div class="library" id="library">
-        <div class="librarycard">
-            <div class="title">Hunger Games</div>
-            <div class="author">That Lady</div>
-            <div class="pages">300</div>
+        <div class="card">
+            <div class="title"></div>
+            <div class="author"></div>
+            <div class="pages"></div>
             <br>
         </div>
-
     </div>
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="title">Exmaple Modal</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modalbody">
+            <form id="newbook">
+                <label for="">Title: <input type="text" id="title" required></label>
+                <label for="">Author: <input type="text" id="author"></label>
+                <label for="">pages: <input type="text" id="pages"></label>
+                <input type="checkbox" id="read" name="read" value="read">
+                <label for="read"> Read?</label>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+    </div>
+    <div id="overlay"></div>
 </body>
 </html>
