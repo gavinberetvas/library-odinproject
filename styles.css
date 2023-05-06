@@ -15,7 +15,8 @@
 --background-color: #FFFFFF;
 --secondary-color: #000;
 --button-color: #FFF;
---checkbox-color: #3f3f3f
+--card-color: #FFF;
+--checkbox-color: #3f3f3f;
 
 }
 
@@ -23,6 +24,7 @@
     --background-color: #212047;
     --secondary-color: #C5C3F8;
     --button-color: #635FD6;
+    --card-color: #42408F;
 
 }
 
@@ -112,14 +114,9 @@ body {
     color: var(--secondary-color);
 }
 
-
-
 .header > .newbk {
     max-width: 11rem;
 }
-
-
-
 
 .library {
     display: grid;
@@ -131,6 +128,7 @@ body {
 
 .card {
     padding: 1rem;
+    background-color: var(--card-color);
     border-radius: 12px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     margin: 1rem;
@@ -238,12 +236,11 @@ input {
   color: var(--secondary-color);
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
     color: var(--secondary-color);
-    opacity: 1; /* Firefox */
+    opacity: 1;
   }
 
-/* BUTTON COURTESY OF  */
 
 p.question {
     font-size: 1.2rem;
@@ -351,19 +348,6 @@ p.question {
     background-color: var(--button-color);
 }
 
-/* @media screen and (min-width: 1000px) {
-  .library {
-      display: grid;
-      margin: 1rem 10rem;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-  }
-
-  .header {
-    padding: 1rem 10rem;
-  }
-} */
-
 @media screen and (min-width: 680px) {
     .library {
         display: grid;
@@ -378,43 +362,3 @@ p.question {
     }
 }
 
-
-
-/* @media screen and (prefers-color-scheme: dark) {
-    h1 {
-        color: white;
-    }
-    
-    .header {
-        background-color: #3f3f3f;
-    }
-
-    body {
-        background-color: #292929;
-    }
-
-    .card {
-        background-color: #3f3f3f;
-        color: white;
-        border: 1px solid white;
-    }
-
-    .modal {
-        background-color: #3f3f3f;
-        color: white;
-        border: 1px solid white;
-    }
-
-    .checkbox {
-        background-color: #ffffff;
-    }
-
-    .close-button {
-        color: white;
-    }
-
-.checkbox-wrapper-39 input:checked ~ .checkbox {
-   background-color: #3f3f3f;
-  }
-
-} */
