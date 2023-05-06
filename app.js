@@ -3,6 +3,7 @@ const closeModalButtons = document.querySelectorAll("[data-close-button]");
 const overlay = document.getElementById("overlay");
 const myLibrary = [];
 const form = document.getElementById("newbook");
+let night = true;
 
 openModalButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -26,35 +27,33 @@ closeModalButtons.forEach((button) => {
 });
 
 form.addEventListener("submit", (event) => {
-    event.preventDefault();
-  
-    const title = document.getElementById("title").value;
-    const author = document.getElementById("author").value;
-    const pages = document.getElementById("pages").value;
-    const read = document.getElementById("read").checked;
-  
-    const book = {
-      title,
-      author,
-      pages,
-      read,
-    };
-  
-    myLibrary.push(book);
-    addBookSingularToLibrary();
-    formReset();
-    closeModal(modal);
+  event.preventDefault();
 
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const pages = document.getElementById("pages").value;
+  const read = document.getElementById("read").checked;
 
-  });
+  const book = {
+    title,
+    author,
+    pages,
+    read,
+  };
 
-function formReset(){
-  document.getElementById("title").value = '';
-    document.getElementById("author").value = '';
-    document.getElementById("pages").value = '';
-    document.getElementById("read").checked = false;
+  myLibrary.push(book);
+  addBookSingularToLibrary();
+  formReset();
+  closeModal(modal);
+});
+
+function formReset() {
+  document.getElementById("title").value = "";
+  document.getElementById("author").value = "";
+  document.getElementById("pages").value = "";
+  document.getElementById("read").checked = false;
 }
-  
+
 function openModal(modal) {
   if (modal == null) return;
   modal.classList.add("active");
@@ -95,7 +94,12 @@ function addBookSingularToLibrary() {
   bookread ? (read.innerHTML = "read") : (read.innerHTML = "not read");
   read.setAttribute("data-key", `${booktitle}`);
 
+  const buttonBox = document.createElement("div");
+  buttonBox.classList.add("buttonbox");
+
   const removeBtn = document.createElement("button");
+  removeBtn.classList.add("button");
+  removeBtn.classList.add("rmv");
   removeBtn.innerHTML = "Remove";
   removeBtn.addEventListener("click", () => {
     const bookIndex = myLibrary.findIndex((obj) => obj.title === booktitle);
@@ -104,6 +108,8 @@ function addBookSingularToLibrary() {
   });
 
   const editBtn = document.createElement("button");
+  editBtn.classList.add("button");
+  editBtn.classList.add("edit");
   editBtn.innerHTML = "Read?";
   editBtn.addEventListener("click", () => {
     const edit = document.querySelector(`div[data-key="${booktitle}"]`);
@@ -120,21 +126,21 @@ function addBookSingularToLibrary() {
   book.appendChild(author);
   book.appendChild(pages);
   book.appendChild(read);
-  book.appendChild(removeBtn);
-  book.appendChild(editBtn);
+  buttonBox.appendChild(removeBtn);
+  buttonBox.appendChild(editBtn);
+  book.appendChild(buttonBox);
   document.getElementById("library").appendChild(book);
-
-  // alert(myLibrary);
 }
 
-// function Book(title, author, pages, read) {
-//   this.title = title;
-//   this.author = author;
-//   this.pages = pages;
-//   this.read = read;
-//   this.info = function bookify() {
-//     console.log(
-//       `${title} is by ${author}. It is ${pages} pages long. I have ${read} it.`
-//     );
-//   };
+// const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+
+// function switchTheme(e) {
+//     if (e.target.checked) {
+//         document.documentElement.setAttribute('data-theme', 'dark');
+//     }
+//     else {
+//         document.documentElement.setAttribute('data-theme', 'light');
+//     }    
 // }
+
+// toggleSwitch.addEventListener('change', switchTheme, false);

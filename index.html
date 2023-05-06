@@ -1,33 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="app.js" defer></script>
     <title>Library App</title>
-</head>
-<body>
-    <button data-modal-target="#modal">Add A New Book</button>
+  </head>
+  <body>
+    <div class="header">
+        <h1 >Odin's Library</h1>
+        
+        <button class="button dog newbk" data-modal-target="#modal">Book+
+        </button>
+    </div>
     <div class="library" id="library">
     </div>
     <div class="modal" id="modal">
-        <div class="modal-header">
-            <div class="title">New Book</div>
-            <button data-close-button class="close-button">&times;</button>
-        </div>
-        <div class="modalbody">
-            <form id="newbook">
-                <label for="">Title: <input type="text" id="title" required></label>
-                <label for="">Author: <input type="text" id="author"></label>
-                <label for="">pages: <input type="text" id="pages"></label>
-                <input type="checkbox" id="read" name="read" value="read" type="reset">
-                <label for="read"> Read?</label>
-                <input type="submit" value="submit">
-            </form>
-        </div>
+      <div class="modal-header">
+        <div class="title">New Book</div>
+        <button data-close-button class="close-button">&times;</button>
+      </div>
+      <div class="modalbody">
+        <form id="newbook">
+          <label for=""
+            ><input
+              class="forminput"
+              type="text"
+              id="title"
+              placeholder="Title"
+              required
+          /></label>
+          <label for=""
+            ><input
+              class="forminput"
+              type="text"
+              id="author"
+              placeholder="Author"
+          /></label>
+          <label for=""
+            ><input
+              class="forminput"
+              type="number"
+              id="pages"
+              placeholder="# of pages"
+              max="10000"
+          /></label>
+          <div class="checkbox-wrapper-39">
+            <div><p class="question">read?</p></div>
+            <label for="read"
+              ><input type="checkbox" id="read" name="read" value="read" />
+              <span class="checkbox"></span>
+            </label>
+          </div>
+          <div class="buttonwrapper">
+            <input type="submit" class="button" value="submit" />
+          </div>
+        </form>
+      </div>
     </div>
     <div id="overlay"></div>
-</body>
+  </body>
 </html>
