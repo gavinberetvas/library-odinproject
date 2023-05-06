@@ -132,15 +132,15 @@ function addBookSingularToLibrary() {
   document.getElementById("library").appendChild(book);
 }
 
-// const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
+const toggleSwitch = document.querySelector('.checkbox-wrapper-3 input[type="checkbox"]');
 
-// function switchTheme(e) {
-//     if (e.target.checked) {
-//         document.documentElement.setAttribute('data-theme', 'dark');
-//     }
-//     else {
-//         document.documentElement.setAttribute('data-theme', 'light');
-//     }    
-// }
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'light');
+    }    
+}
 
-// toggleSwitch.addEventListener('change', switchTheme, false);
+toggleSwitch.addEventListener('change', switchTheme, false);

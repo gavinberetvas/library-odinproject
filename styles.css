@@ -14,6 +14,7 @@
 --lighterpurple: #C5C3F8;
 --background-color: #FFFFFF;
 --secondary-color: #000;
+--button-color: #FFF;
 --checkbox-color: #3f3f3f
 
 }
@@ -21,23 +22,103 @@
 [data-theme="dark"] {
     --background-color: #212047;
     --secondary-color: #C5C3F8;
+    --button-color: #635FD6;
 
 }
 
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     gap: 2rem;
     background-color: var(--background-color);
+    color: var(--secondary-color);
     padding: 1rem 1.5rem;
     margin-bottom: 2rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
 }
 
+.checkbox-wrapper-3 input[type="checkbox"] {
+    visibility: hidden;
+    display: none;
+  }
+
+  .checkbox-wrapper-3 .toggle {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+  }
+  .checkbox-wrapper-3 .toggle:before {
+    content: "";
+    position: relative;
+    top: 3px;
+    left: 3px;
+    width: 34px;
+    height: 14px;
+    display: block;
+    background: #9A9999;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+  }
+  .checkbox-wrapper-3 .toggle span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(154, 153, 153, 0.5);
+    transition: all 0.2s ease;
+  }
+  .checkbox-wrapper-3 .toggle span:before {
+    content: "";
+    position: absolute;
+    display: block;
+    margin: -18px;
+    width: 56px;
+    height: 56px;
+    background: rgba(79, 46, 220, 0.5);
+    border-radius: 50%;
+    transform: scale(0);
+    opacity: 1;
+    pointer-events: none;
+  }
+
+  .checkbox-wrapper-3 #cbx-3:checked + .toggle:before {
+    background: #947ADA;
+  }
+  .checkbox-wrapper-3 #cbx-3:checked + .toggle span {
+    background: #4F2EDC;
+    transform: translateX(20px);
+    transition: all 0.2s cubic-bezier(0.8, 0.4, 0.3, 1.25), background 0.15s ease;
+    box-shadow: 0 3px 8px rgba(79, 46, 220, 0.2);
+  }
+  .checkbox-wrapper-3 #cbx-3:checked + .toggle span:before {
+    transform: scale(1);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+body {
+    background-color: var(--background-color);
+    color: var(--secondary-color);
+}
+
+
+
 .header > .newbk {
     max-width: 11rem;
 }
+
+
+
 
 .library {
     display: grid;
@@ -107,6 +188,7 @@
     cursor: pointer;
     outline: none;
     font-weight: bold;
+    color: var(--secondary-color)
 }
 
 .modalbody {
@@ -145,14 +227,20 @@ input {
 
 
 .forminput {
-    background-color: var(--background-color);
+    background-color: var(--button-color);
     padding: .4rem;
     margin: .5rem;
     gap: 1rem;
     border-radius: 12px;
     font-size: 1.2rem;
   font-weight: 400;
+  color: var(--secondary-color);
 }
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--secondary-color);
+    opacity: 1; /* Firefox */
+  }
 
 /* BUTTON COURTESY OF  */
 
@@ -195,7 +283,7 @@ p.question {
    border-color: #24c78e;
    border-top-color: transparent;
    border-left-color: transparent;
-   background-color: #FFF;
+   background-color: var(--background-color)
    border-radius: 0;
   }
 
@@ -224,7 +312,7 @@ p.question {
 
 .button {
   align-items: center;
-  background-color: #c3eaff;
+  background-color: var(--button-color);
   border-radius: 12px;
   box-shadow: transparent 0 0 0 3px,rgba(18, 18, 18, .1) 0 6px 20px;
   box-sizing: border-box;
@@ -255,11 +343,11 @@ p.question {
 }
 
 .rmv {
-    background-color: #ffc3c3;
+    background-color: var(--button-color);
 }
 
 .edit {
-    background-color: #d8d8d8;
+    background-color: var(--button-color);
 }
 
 @media screen and (min-width: 680px) {
@@ -270,7 +358,7 @@ p.question {
     }
 }
 
-@media screen and (prefers-color-scheme: dark) {
+/* @media screen and (prefers-color-scheme: dark) {
     h1 {
         color: white;
     }
@@ -307,4 +395,4 @@ p.question {
    background-color: #3f3f3f;
   }
 
-}
+} */
