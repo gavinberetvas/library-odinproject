@@ -1,9 +1,9 @@
+/* eslint-disable no-use-before-define */
 const openModalButtons = document.querySelectorAll("[data-modal-target]");
 const closeModalButtons = document.querySelectorAll("[data-close-button]");
 const overlay = document.getElementById("overlay");
-const myLibrary = [];
+const myLibrary = [""];
 const form = document.getElementById("newbook");
-let night = true;
 
 openModalButtons.forEach((button) => {
   button.addEventListener("click", () => {
@@ -42,8 +42,10 @@ form.addEventListener("submit", (event) => {
   };
 
   myLibrary.push(book);
+  // eslint-disable-next-line no-use-before-define
   addBookSingularToLibrary();
   formReset();
+  // eslint-disable-next-line no-undef
   closeModal(modal);
 });
 
@@ -73,24 +75,20 @@ function addBookSingularToLibrary() {
   const bookauthor = lastObj.author;
   const bookpages = lastObj.pages;
   let bookread = lastObj.read;
-
   const book = document.createElement("div");
   book.classList.add("card");
-
   const title = document.createElement("div");
   title.classList.add("title");
   title.innerHTML = `Title: ${booktitle}`;
-
   const author = document.createElement("div");
   author.classList.add("author");
   author.innerHTML = `Author: ${bookauthor}`;
-
   const pages = document.createElement("div");
   pages.classList.add("pages");
   pages.innerHTML = `Pages: ${bookpages}`;
-
   const read = document.createElement("div");
   read.classList.add("read");
+  // eslint-disable-next-line no-unused-expressions
   bookread ? (read.innerHTML = "read") : (read.innerHTML = "not read");
   read.setAttribute("data-key", `${booktitle}`);
 
@@ -132,15 +130,38 @@ function addBookSingularToLibrary() {
   document.getElementById("library").appendChild(book);
 }
 
-const toggleSwitch = document.querySelector('.checkbox-wrapper-3 input[type="checkbox"]');
+const toggleSwitch = document.querySelector(
+  '.checkbox-wrapper-3 input[type="checkbox"]'
+);
 
 function switchTheme(e) {
-    if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
-    else {
-        document.documentElement.setAttribute('data-theme', 'light');
-    }    
+  if (e.target.checked) {
+    document.documentElement.setAttribute("data-theme", "dark");
+  } else {
+    document.documentElement.setAttribute("data-theme", "light");
+  }
 }
 
-toggleSwitch.addEventListener('change', switchTheme, false);
+toggleSwitch.addEventListener("change", switchTheme, false);
+
+// function objectLibrary() {
+//   console.log(myLibrary);
+// }
+
+// function repeat1(book) {
+//   let test = myLibrary.some((obj) => {
+//     return obj.title === book.title;
+//   });
+//   alert(test);
+// }
+
+// myLibrary.some((obj) => {
+//   if (obj.title === book.title) {
+//     repeat = true;
+//     console.log("true");
+//     return
+//   } else {
+//     repeat = false;
+//     console.log("false");
+//   }
+// });
