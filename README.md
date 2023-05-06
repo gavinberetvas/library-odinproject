@@ -9,3 +9,5 @@ Credit to Andreas Storm for the Dark Switch Style
 Credit to Mihai Crihan for the Modal Switch Style
 
 Credit to Mouseless for the Button
+
+Thanks to Ananya Neogi for the dark mode tutorial 
