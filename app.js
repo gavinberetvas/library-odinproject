@@ -42,8 +42,18 @@ form.addEventListener("submit", (event) => {
   
     myLibrary.push(book);
     addBookSingularToLibrary();
+    formReset();
     closeModal(modal);
+
+
   });
+
+function formReset(){
+  document.getElementById("title").value = '';
+    document.getElementById("author").value = '';
+    document.getElementById("pages").value = '';
+    document.getElementById("read").checked = false;
+}
   
 function openModal(modal) {
   if (modal == null) return;
@@ -55,6 +65,7 @@ function closeModal(modal) {
   if (modal == null) return;
   modal.classList.remove("active");
   overlay.classList.remove("active");
+  formReset();
 }
 
 function addBookSingularToLibrary() {
