@@ -281,7 +281,7 @@ p.question {
    border-color: #24c78e;
    border-top-color: transparent;
    border-left-color: transparent;
-   background-color: var(--background-color)
+   background-color: var(--background-color);
    border-radius: 0;
   }
 
