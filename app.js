@@ -143,25 +143,3 @@ function switchTheme(e) {
 }
 
 toggleSwitch.addEventListener("change", switchTheme, false);
-
-// function objectLibrary() {
-//   console.log(myLibrary);
-// }
-
-// function repeat1(book) {
-//   let test = myLibrary.some((obj) => {
-//     return obj.title === book.title;
-//   });
-//   alert(test);
-// }
-
-// myLibrary.some((obj) => {
-//   if (obj.title === book.title) {
-//     repeat = true;
-//     console.log("true");
-//     return
-//   } else {
-//     repeat = false;
-//     console.log("false");
-//   }
-// });
