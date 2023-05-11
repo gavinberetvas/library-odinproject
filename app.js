@@ -29,19 +29,33 @@ closeModalButtons.forEach((button) => {
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const title = document.getElementById("title").value;
-  const author = document.getElementById("author").value;
-  const pages = document.getElementById("pages").value;
-  const read = document.getElementById("read").checked;
+  // const title = document.getElementById("title").value;
+  // const author = document.getElementById("author").value;
+  // const pages = document.getElementById("pages").value;
+  // const read = document.getElementById("read").checked;
 
-  const book = {
-    title,
-    author,
-    pages,
-    read,
-  };
+  // const book = {
+  //   title,
+  //   author,
+  //   pages,
+  //   read,
+  // };
 
-  myLibrary.push(book);
+  // const book = {
+  //   title: title.value,
+  //   author: author.value,
+  //   pages: pages.value,
+  //   read: read.checked,
+  // };
+
+  const { title, author, pages, read } = event.target.elements;
+
+  myLibrary.push({
+    title: title.value,
+    author: author.value,
+    pages: pages.value,
+    read: read.checked,
+  });
   // eslint-disable-next-line no-use-before-define
   addBookSingularToLibrary();
   formReset();
@@ -75,11 +89,12 @@ function addBookSingularToLibrary() {
   const bookauthor = lastObj.author;
   const bookpages = lastObj.pages;
   let bookread = lastObj.read;
+  
   const book = document.createElement("div");
   book.classList.add("card");
   const title = document.createElement("div");
   title.classList.add("title");
-  title.innerHTML = `Title: ${booktitle}`;
+  title.innerHTML = `Title: ${lastObj.title}`;
   const author = document.createElement("div");
   author.classList.add("author");
   author.innerHTML = `Author: ${bookauthor}`;
