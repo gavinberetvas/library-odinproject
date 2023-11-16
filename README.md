@@ -10,11 +10,14 @@ This is a basic javascript library for the [Odin Project](https://www.theodinpro
 
 I am particularly pleased with the dark/light mode switch. It works by swapping the values of CSS variables; changing the identity of a "data-theme" from light to dark.
 
->[data-theme="dark"] {
+```
+[data-theme="dark"] {
   --background-color: #212047;
   --secondary-color: #c5c3f8;
   --button-color: #635fd6;
-  --card-color: #42408f; }
+  --card-color: #42408f; 
+  }
+```
 
 
 I learned this and more through reading [Ananya Neogi's excellent blog post](https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8). 
