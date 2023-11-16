@@ -1,13 +1,41 @@
-# library-odinproject
+## Library
 
-Styles credit:
+![Library Photo](library.jpg)
 
-taken from cssscan.com
+[Try it out for yourself!](https://gavinberetvas.github.io/library-odinproject/)   :point_left:
 
-Credit to Andreas Storm for the Dark Switch Style 
+## Summary
 
-Credit to Mihai Crihan for the Modal Switch Style
+This is a basic javascript library for the [Odin Project](https://www.theodinproject.com/lessons/node-path-javascript-library). The library is an array which can be populated with book objects. The code then displays them in a simple library. When books are deleted, both the display and the objects in the array are modified. 
 
-Credit to Mouseless for the Button
+I am particularly pleased with the dark/light mode switch. It works by swapping CSS variables based on a "data-theme".
 
-Thanks to Ananya Neogi for the dark mode tutorial 
+>[data-theme="dark"] {
+  --background-color: #212047;
+  --secondary-color: #c5c3f8;
+  --button-color: #635fd6;
+  --card-color: #42408f;
+}
+
+
+I learned this through reading [Ananya Neogi's excellent blog post](https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8). 
+
+### Technologies
+
+* HTML5
+* CSS3
+* Vanilla JS/ES6
+
+### Supporting Tools
+
+* ESLint
+* Git/GitHub
+* Visual Studio Code
+
+## Credits
+* Thanks to [Andreas Storm](https://github.com/andreasstorm) for the switch style.
+* Thanks to Ananya Neogi for the [dark mode tutorial](https://dev.to/ananyaneogi/create-a-dark-light-mode-switch-with-css-variables-34l8).
+
+## License
+
+* Copyright © 2023 Gavin Beretvas
